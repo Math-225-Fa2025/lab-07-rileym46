@@ -1,6 +1,6 @@
 ---
 title: "Lab 07 - Smokers in Whickham"
-author: "[Your Name]"
+author: "Riley Martindale"
 subtitle: "Simpson's paradox"
 output: 
   tufte::tufte_handout:
@@ -64,13 +64,16 @@ You can find out more about the dataset by inspecting their documentation, which
 
 1.  What type of study do you think these data come from: observational or experiment?
     Why?
+`I think it is observational. I don't think that is it practical for the study to have people smoke for years to see if they live. It was more likely a survey of the population.` 
 
 2.  How many observations are in this dataset?
     What does each observation represent?
+`There are 1314 observations. Each observation is a person.`
 
 3.  How many variables are in this dataset?
     What type of variable is each?
     Display each variable using an appropriate visualization.
+    `There are 3 variables.`
 
 4.  What would you expect the relationship between smoking status and health outcome to be?
 
