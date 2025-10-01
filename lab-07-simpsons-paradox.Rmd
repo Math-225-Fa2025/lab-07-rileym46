@@ -3,15 +3,15 @@ title: "Lab 07 - Smokers in Whickham"
 author: "Riley Martindale"
 subtitle: "Simpson's paradox"
 output: 
+  tufte::tufte_html:
+    css: ../lab.css
+    tufte_variant: "envisioned"
+    highlight: pygments
   tufte::tufte_handout:
     latex_engine: xelatex
     highlight: pygments
     keep_tex: true
     citation_package: natbib
-  tufte::tufte_html:
-    css: ../lab.css
-    tufte_variant: "envisioned"
-    highlight: pygments
 link-citations: true
 ---
 
@@ -73,9 +73,35 @@ You can find out more about the dataset by inspecting their documentation, which
 3.  How many variables are in this dataset?
     What type of variable is each?
     Display each variable using an appropriate visualization.
-    `There are 3 variables.`
+    `There are 3 variables. Outcome and Smoker are logical variables. Age is an integer.`
+
+```{r table, eval = TRUE}
+Whickham %>%
+  ggplot(aes(x = outcome, fill = smoker, color = smoker)) +
+  geom_bar(position = "fill") +
+  labs(
+    title = "Smoker vs Morality",
+    x = "Outcome",
+    y = "Count",
+    fill = "Smoker",
+    color = "Smoker"
+  )
+```
+```{r age-graph, eval = TRUE}
+Whickham %>%
+  ggplot(aes(x = age, color = smoker, fill = smoker)) +
+  geom_histogram()+
+  labs(
+    title = "Age of Smokers",
+    x = "Age",
+    y = "Count",
+    fill = "Smoker",
+    color = "Smoker"
+  )
+```
 
 4.  What would you expect the relationship between smoking status and health outcome to be?
+`I would expect that smoking would negatively affect health.`
 
 Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
